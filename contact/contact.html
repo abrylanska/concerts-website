@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>Contact Us</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎤</text></svg>">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a class="nav__logo" href="./index.html">c<span>o</span>ncerts</a>
+        <nav>
+            <ul class="nav__items">
+                <li class="nav__item"><a href="../search/search.html">search</a></li>
+                <li class="nav__item"><a href="../about/about.html">about</a></li>
+                <li class="nav__item"><a href="../contact/contact.html">contact</a></li>
+            </ul>
+        </nav>
+        <a class="nav__favorite" href="../favorites/favorites.html">
+            <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" class="iconify iconify--twemoji" preserveAspectRatio="xMidYMid meet" stroke="#000000" fill="none" stroke-width="2">
+                <path d="M12 21.35l-1.45-1.32C5.4 16.44 2 13.36 2 9.5 2 6.42 4.42 4 7.5 4c1.74 0 3.41.81 4.5 2.09C13.09 4.81 14.76 4 16.5 4 19.58 4 22 6.42 22 9.5c0 3.86-3.4 7.94-8.55 10.54L12 21.35z"></path>
+            </svg>
+        </a>
+    </header>
+
+    <main>
+        <div class="main__text">
+            <h1>Have you got any <span>questions?</span></h1>
+            <h2>Get in touch and send me a message at <span>agatabrylanska@gmail.com</span></h2>
+        </div>
+
+        <form class="main__form">
+            <div class="main__form--details">
+                <div class="main__form--details-name">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Anna" maxlength="50" required />
+                </div>
+                <div class="main__form--details-email">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email" placeholder="example@gmail.com" maxlength="50" required />
+                </div>
+                <div class="main__form--details-phone">
+                    <label for="phone">Phone<span> (optional)</span></label>
+                    <input type="tel" id="phone" name="phone" placeholder="123-456-789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" />
+                </div>
+            </div>
+            <div class="main__form--message">
+                <label for="message">Message</label>
+                <input type="text" id="message" placeholder="Hey!" minlength="4" maxlength="250" size="10" required/>
+                <div id="counter">0/250</div>
+            </div>
+            <div>
+                <button class="main__form--button" type="submit">
+                    Send
+                    <span class="button-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 12L18.3536 11.6464L18.7071 12L18.3536 12.3536L18 12ZM6 12.5C5.72386 12.5 5.5 12.2761 5.5 12C5.5 11.7239 5.72386 11.5 6 11.5V12.5ZM14.3536 7.64645L18.3536 11.6464L17.6464 12.3536L13.6464 8.35355L14.3536 7.64645ZM18.3536 12.3536L14.3536 16.3536L13.6464 15.6464L17.6464 11.6464L18.3536 12.3536ZM18 12.5H6V11.5H18V12.5Z" fill="#222222"/>
+                  </svg>
+                </span>
+                </button>
+            </div>
+        </form>
+        <div class="main__message">
+            Thanks for submitting the form. We will contact you as soon as possible!
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="contact.js"></script>
+</body>
+</html>
+

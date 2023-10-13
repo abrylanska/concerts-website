@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>Search Concerts</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎤</text></svg>">
+    <link rel="stylesheet" href="search.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+</head>
+<body>
+    <header>
+        <a class="nav__logo" href="./index.html">c<span>o</span>ncerts</a>
+        <nav>
+            <ul class="nav__items">
+                <li class="nav__item"><a href="../search/search.html">search</a></li>
+                <li class="nav__item"><a href="../about/about.html">about</a></li>
+                <li class="nav__item"><a href="../contact/contact.html">contact</a></li>
+            </ul>
+        </nav>
+        <a class="nav__favorite" href="../favorites/favorites.html">
+            <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" class="iconify iconify--twemoji" preserveAspectRatio="xMidYMid meet" stroke="#000000" fill="none" stroke-width="2">
+                <path d="M12 21.35l-1.45-1.32C5.4 16.44 2 13.36 2 9.5 2 6.42 4.42 4 7.5 4c1.74 0 3.41.81 4.5 2.09C13.09 4.81 14.76 4 16.5 4 19.58 4 22 6.42 22 9.5c0 3.86-3.4 7.94-8.55 10.54L12 21.35z"></path>
+            </svg>
+        </a>
+    </header>
+
+    <main>
+        <div class="main__searchbar">
+            <div class="searchbar">
+                <input id="searchbarInput" type="text" placeholder="Find your next concert experience...">
+                <span id="searchErrorMessage" style="color: red;"></span>
+
+            </div>
+            <button id="searchbarButton">
+                <svg width="32" height="32" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="25.6667" cy="25.6667" r="16.3333" stroke="#33363F" stroke-width="2"/>
+                    <path d="M25.6667 18.6667C24.7474 18.6667 23.8372 18.8477 22.9879 19.1995C22.1386 19.5513 21.3669 20.0669 20.7169 20.7169C20.0669 21.3669 19.5513 22.1386 19.1995 22.9879C18.8477 23.8372 18.6667 24.7474 18.6667 25.6667" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M46.6667 46.6667L39.6667 39.6667" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="main__filters">
+            <ul>
+                <li id="genre-filter" class="main__filters--filter">
+                    <div class="filter-header">
+                        <svg class="filter-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="14.6666" cy="14.6667" r="9.33333" stroke="#33363F" stroke-width="2"/>
+                            <path d="M14.6667 10.6667C14.1414 10.6667 13.6213 10.7701 13.136 10.9712C12.6507 11.1722 12.2097 11.4668 11.8383 11.8382C11.4668 12.2097 11.1722 12.6506 10.9712 13.1359C10.7701 13.6212 10.6667 14.1414 10.6667 14.6667" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M26.6667 26.6667L22.6667 22.6667" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <span>genre</span>
+                        <svg class="filter-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.1808 15.8297L6.54199 9.20285C5.89247 8.27496 6.55629 7 7.68892 7L16.3111 7C17.4437 7 18.1075 8.27496 17.458 9.20285L12.8192 15.8297C12.4211 16.3984 11.5789 16.3984 11.1808 15.8297Z" fill="#33363F"/>
+                        </svg>
+                    </div>
+                    <div class="filter-dropdown">
+                        <ul>
+                            <li><input id="showAllCheckbox" type="checkbox">Show all</li>
+                            <li><input type="checkbox">Rock</li>
+                            <li><input type="checkbox">Pop</li>
+                            <li><input type="checkbox">Hip-Hop/Rap</li>
+                            <li><input type="checkbox">Electronic/Dance</li>
+                            <li><input type="checkbox">Country</li>
+                            <li><input type="checkbox">R&B/Soul</li>
+                            <li><input type="checkbox">Jazz</li>
+                            <li><input type="checkbox">Classical</li>
+                            <li><input type="checkbox">Blues</li>
+                            <li><input type="checkbox">Reggae</li>
+                            <li><input type="checkbox">Metal</li>
+                            <li><input type="checkbox">Alternative</li>
+                            <li><input type="checkbox">World Music</li>
+                            <li><input type="checkbox">Folk</li>
+                            <li><input type="checkbox">Punk</li>
+                            <li><input type="checkbox">Indie</li>
+                            <li><input type="checkbox">Latin</li>
+                            <li><input type="checkbox">Gospel</li>
+                            <li><input type="checkbox">Christian</li>
+                            <li><input type="checkbox">K-Pop</li>
+                        </ul>
+                    </div>
+                </li>
+                <li id="city-filter" class="main__filters--filter">
+                    <div class="filter-header">
+                        <svg class="filter-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.398 19.804C13.881 19.0348 19 16.0163 19 11C19 7.13401 15.866 4 12 4C8.13401 4 5 7.13401 5 11C5 16.0163 10.119 19.0348 11.602 19.804C11.8548 19.9351 12.1452 19.9351 12.398 19.804ZM12 14C13.6569 14 15 12.6569 15 11C15 9.34315 13.6569 8 12 8C10.3431 8 9 9.34315 9 11C9 12.6569 10.3431 14 12 14Z" fill="white" fill-opacity="1"/>
+                            <path d="M12.398 19.804L12.6743 20.3366V20.3366L12.398 19.804ZM11.602 19.804L11.3257 20.3366L11.3257 20.3366L11.602 19.804ZM18.4 11C18.4 13.2907 17.2328 15.1563 15.829 16.5722C14.4258 17.9876 12.8363 18.9007 12.1218 19.2713L12.6743 20.3366C13.4427 19.938 15.1542 18.9573 16.6812 17.4171C18.2077 15.8774 19.6 13.7256 19.6 11H18.4ZM12 4.6C15.5346 4.6 18.4 7.46538 18.4 11H19.6C19.6 6.80264 16.1974 3.4 12 3.4V4.6ZM5.6 11C5.6 7.46538 8.46538 4.6 12 4.6V3.4C7.80264 3.4 4.4 6.80264 4.4 11H5.6ZM11.8782 19.2713C11.1637 18.9007 9.57422 17.9876 8.17097 16.5722C6.76717 15.1563 5.6 13.2907 5.6 11H4.4C4.4 13.7256 5.79235 15.8774 7.31879 17.4171C8.8458 18.9573 10.5573 19.938 11.3257 20.3366L11.8782 19.2713ZM12.1218 19.2713C12.0421 19.3127 11.9579 19.3127 11.8782 19.2713L11.3257 20.3366C11.7518 20.5576 12.2482 20.5576 12.6743 20.3366L12.1218 19.2713ZM14.4 11C14.4 12.3255 13.3255 13.4 12 13.4V14.6C13.9882 14.6 15.6 12.9882 15.6 11H14.4ZM12 8.6C13.3255 8.6 14.4 9.67452 14.4 11H15.6C15.6 9.01178 13.9882 7.4 12 7.4V8.6ZM9.6 11C9.6 9.67452 10.6745 8.6 12 8.6V7.4C10.0118 7.4 8.4 9.01178 8.4 11H9.6ZM12 13.4C10.6745 13.4 9.6 12.3255 9.6 11H8.4C8.4 12.9882 10.0118 14.6 12 14.6V13.4Z" fill="#222222"/>
+                        </svg>
+                        <span>city</span>
+                        <svg class="filter-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.1808 15.8297L6.54199 9.20285C5.89247 8.27496 6.55629 7 7.68892 7L16.3111 7C17.4437 7 18.1075 8.27496 17.458 9.20285L12.8192 15.8297C12.4211 16.3984 11.5789 16.3984 11.1808 15.8297Z" fill="#33363F"/>
+                        </svg>
+                    </div>
+                    <div class="filter-dropdown">
+                        <ul>
+                            <li><input id="showAllCityCheckbox" type="checkbox">Show all</li>
+                            <li><input type="checkbox" id="city-bydgoszcz" value="bydgoszcz">Bydgoszcz</li>
+                            <li><input type="checkbox" id="city-gdansk" value="gdansk">Gdańsk</li>
+                            <li><input type="checkbox" id="city-gdynia" value="gdynia">Gdynia</li>
+                            <li><input type="checkbox" id="city-gliwice" value="gliwice">Gliwice</li>
+                            <li><input type="checkbox" id="city-katowice" value="katowice">Katowice</li>
+                            <li><input type="checkbox" id="city-krakow" value="krakow">Kraków</li>
+                            <li><input type="checkbox" id="city-lublin" value="lublin">Lublin</li>
+                            <li><input type="checkbox" id="city-poznan" value="poznan">Poznań</li>
+                            <li><input type="checkbox" id="city-sopot" value="sopot">Sopot</li>
+                            <li><input type="checkbox" id="city-szczecin" value="szczecin">Szczecin</li>
+                            <li><input type="checkbox" id="city-warszawa" value="warszawa">Warszawa</li>
+                            <li><input type="checkbox" id="city-wroclaw" value="wroclaw">Wrocław</li>
+                            <li><input type="checkbox" id="city-lodz" value="lodz">Łódź</li>
+                        </ul>
+                    </div>
+                </li>
+                <li  id="date-filter" class="main__filters--filter">
+                    <div class="filter-header">
+                        <svg class="filter-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="8" width="24" height="20" rx="2" stroke="#33363F" stroke-width="2"/>
+                            <path d="M4 12C4 10.1144 4 9.17157 4.58579 8.58579C5.17157 8 6.11438 8 8 8H24C25.8856 8 26.8284 8 27.4142 8.58579C28 9.17157 28 10.1144 28 12V13.3333H4V12Z" fill="#33363F"/>
+                            <path d="M9.33337 4L9.33337 8" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M22.6666 4L22.6666 8" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
+                            <rect x="9.33337" y="16" width="5.33333" height="2.66667" rx="0.5" fill="#33363F"/>
+                            <rect x="9.33337" y="21.3333" width="5.33333" height="2.66667" rx="0.5" fill="#33363F"/>
+                            <rect x="17.3334" y="16" width="5.33333" height="2.66667" rx="0.5" fill="#33363F"/>
+                            <rect x="17.3334" y="21.3333" width="5.33333" height="2.66667" rx="0.5" fill="#33363F"/>
+                        </svg>
+                        <span>dates</span>
+                        <svg class="filter-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.1808 15.8297L6.54199 9.20285C5.89247 8.27496 6.55629 7 7.68892 7L16.3111 7C17.4437 7 18.1075 8.27496 17.458 9.20285L12.8192 15.8297C12.4211 16.3984 11.5789 16.3984 11.1808 15.8297Z" fill="#33363F"/>
+                        </svg>
+                    </div>
+                    <div class="filter-dropdown">
+                        <ul>
+                            <li><input id="showAllDateCheckbox" type="checkbox">Show all</li>
+                            <li><input type="checkbox" id="tonightCheckbox" value="tonight">Tonight</li>
+                            <li><input type="checkbox" id="thisWeekCheckbox" value="this-week">This week</li>
+                            <li><input type="checkbox" id="thisMonthCheckbox" value="this-month">This month</li>
+                            <li><input type="checkbox" id="fromToCheckbox">
+                                From <input type="date" id="start" value="2018-07-22"  max="2024-12-31" />
+                                To <input type="date" id="end" value="2018-07-22"  max="2024-12-31" />
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <p class="main__results--notfound-filter">There are no results found for this filter search.</p>
+
+        <p class="main__results--notfound">Sorry, we haven't found any concerts for this search.</p>
+
+        <ul id="concertResults" class="main__results">
+            <!-- The results are dynamically added in JS -->
+        </ul>
+    </main>
+
+    <script src="search.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>
+

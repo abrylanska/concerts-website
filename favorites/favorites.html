@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>Your Favorites</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎤</text></svg>">
+    <link rel="stylesheet" href="favorites.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a class="nav__logo" href="./index.html">c<span>o</span>ncerts</a>
+        <nav>
+            <ul class="nav__items">
+                <li class="nav__item"><a href="../search/search.html">search</a></li>
+                <li class="nav__item"><a href="../about/about.html">about</a></li>
+                <li class="nav__item"><a href="../contact/contact.html">contact</a></li>
+            </ul>
+        </nav>
+        <a class="nav__favorite" href="../favorites/favorites.html">
+            <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" class="iconify iconify--twemoji" preserveAspectRatio="xMidYMid meet" stroke="#000000" fill="none" stroke-width="2">
+                <path d="M12 21.35l-1.45-1.32C5.4 16.44 2 13.36 2 9.5 2 6.42 4.42 4 7.5 4c1.74 0 3.41.81 4.5 2.09C13.09 4.81 14.76 4 16.5 4 19.58 4 22 6.42 22 9.5c0 3.86-3.4 7.94-8.55 10.54L12 21.35z"></path>
+            </svg>
+        </a>
+    </header>
+
+    <main>
+        <h1>Here are your <span>favorite</span> concerts</h1>
+        <p class="main__favorites--notfound">You haven't added any favorite concerts yet</p>
+        <ul class="main__favorites" id="favoriteConcerts">
+            <!-- List items will be dynamically added here in JS -->
+        </ul>
+    </main>
+
+    <script src="favorites.js"></script>
+</body>
+</html>
